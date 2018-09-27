@@ -1,0 +1,38 @@
+<div class="d-flex flex-column h-100">
+  <h4>User Data</h4>
+  <form class="h-100 d-flex flex-column form-page1" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="name" placeholder="type name" name="name" [(ngModel)]="model.name" #name="ngModel" autocomplete="off" pattern="^[a-zA-Z]+$" required />
+      </div>
+      <div *ngIf="f.submitted || name.invalid && (name.dirty || name.touched)" class="col-3 invalid-message">
+          <div *ngIf="name.invalid">Invalid name</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="surname" class="col-sm-2 col-form-label">Surname</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="surname" placeholder="type surname" name="surname" [(ngModel)]="model.surname" #surname="ngModel" pattern="^[a-zA-Z]+$" autocomplete="off" required>
+      </div>
+      <div *ngIf="f.submitted || surname.invalid && (surname.dirty || surname.touched)" class="col-3 invalid-message">
+          <div *ngIf="surname.invalid">Invalid surname</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="age" class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-7">
+        <input type="number" class="form-control" id="surname" placeholder="type age" name="age" [(ngModel)]="model.age" #age="ngModel" autocomplete="off"  pattern="^[0-9]+$" required>
+      </div>
+      <div *ngIf="f.submitted || age.invalid && (age.dirty || age.touched)" class="col-3 invalid-message">
+          <div *ngIf="age.invalid">Invalid age</div>
+      </div>
+    </div>
+    <div *ngIf="name.valid && surname.valid">Hello {{model.name}} {{model.surname}}</div>
+    <div class="form-group row">
+      <div class="col">
+        <button type="submit" class="btn btn-dark">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

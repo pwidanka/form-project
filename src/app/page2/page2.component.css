@@ -1,0 +1,31 @@
+h4{
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.page2{
+    align-items: center;
+    justify-content: space-evenly;   
+    text-align: center; 
+}
+
+.invalid-message{
+    display: flex;
+    width: auto;
+    color: darkred;
+    font-size: 80%;
+    align-items: center;
+}
+
+.image-container{
+    width: 300px;
+    height: 300px;
+    background: darkgrey;
+}
+
+.danger{
+    padding: 5px;
+    border-radius: 5px;
+}

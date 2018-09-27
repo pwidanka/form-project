@@ -1,0 +1,10 @@
+<div class="d-flex flex-column h-100">
+  <div class="h-100 d-flex flex-column page2">
+    <h4 class="w-100">{{model.name}} {{model.surname}}</h4>
+    <button type="button" class="btn btn-success" (click)="accessToImage()">Access</button>
+    <div class="image-container">
+      <img *ngIf="access" src="../assets/dog.jpg" alt="dog-image">
+    </div>
+    <div *ngIf="warning" class="bg-danger danger">You by at least 18 years old!</div>
+  </div>
+</div>
